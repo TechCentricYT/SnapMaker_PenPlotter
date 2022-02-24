@@ -91,7 +91,7 @@ $results = Invoke-WebRequest -Uri http://$ip/api/v1/execute_code -Method POST -B
 
 #Process CNC file.
 foreach($line in Get-Content "$file") {
-    if ($line.Contains(";") -eq $false -and ($line -eq "") -eq $false -and ($line.Contains("M3") -eq $false) -and ($line.Contains("M5") -eq $false)
+    if ($line.Contains(";") -eq $false -and ($line -eq "") -eq $false -and ($line.Contains("M3") -eq $false) -and ($line.Contains("M5") -eq $false))
     {
         write-host $line
         $postParams = @{token=$token;code=$line}
